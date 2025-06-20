@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { FileIcon, WhatsappIcon } from "@/components/icons";
-import { NextIcon, NodeIcon } from "@/components/secondary-icons";
+import { AdaptabilityIcon, CleanCodeIcon, CommunicationIcon, LearningIcon, MysqlIcon, NextIcon, NodeIcon, SupabaseIcon } from "@/components/secondary-icons";
 import { siteConfig } from "@/config/site";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
@@ -79,42 +79,50 @@ export default function IndexPage() {
           <p className="text-lg">Projeto mais recente</p>
 
           {latestProject ? (
-            <Card className="w-full h-[200px] mt-2 relative overflow-hidden" radius="lg">
-              <div className="relative w-full h-full">
-                {latestProject.image_url?.[0]?.includes(".mp4") ? (
-                  <video
-                    src={latestProject.image_url[0]}
-                    controls
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                ) : (
-                  <img
-                    src={latestProject.image_url[0]}
-                    alt={latestProject.title}
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                )}
-              </div>
-              <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 bg-slate-400/60">
-                <p className="text-medium text-white/80 truncate max-w-[70%] text-left">
-                  {latestProject.title}
+            <>
+              <Card className="w-full h-[200px] mt-2 relative overflow-hidden" radius="lg">
+                <div className="relative w-full h-full">
+                  {latestProject.image_url?.[0]?.includes(".mp4") ? (
+                    <video
+                      src={latestProject.image_url[0]}
+                      controls
+                      className="object-cover w-full h-full rounded-lg"
+                    />
+                  ) : (
+                    <img
+                      src={latestProject.image_url[0]}
+                      alt={latestProject.title}
+                      className="object-cover w-full h-full rounded-lg"
+                    />
+                  )}
+                </div>
+                <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 bg-slate-400/60">
+                  <p className="text-medium text-white/80 truncate max-w-[70%] text-left">
+                    {latestProject.title}
+                  </p>
+                  {latestProject.link && (
+                    <Button
+                      className="text-tiny text-white bg-black/30"
+                      color="default"
+                      radius="lg"
+                      size="sm"
+                      variant="flat"
+                      as="a"
+                      href={latestProject.link}
+                      target="_blank"
+                    >
+                      Visualizar
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+
+              {latestProject.description && (
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
+                  {latestProject.description}
                 </p>
-                {latestProject.link && (
-                  <Button
-                    className="text-tiny text-white bg-black/30"
-                    color="default"
-                    radius="lg"
-                    size="sm"
-                    variant="flat"
-                    as="a"
-                    href={latestProject.link}
-                    target="_blank"
-                  >
-                    Visualizar
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
+              )}
+            </>
           ) : (
             <p className="text-sm text-gray-400">Carregando projeto...</p>
           )}
@@ -141,7 +149,17 @@ export default function IndexPage() {
 
           <div className="flex items-center gap-2">
             <NodeIcon />
-            <span>Node.js, Supabase e MySQL</span>
+            <span>Node.js, Javascript</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <MysqlIcon />
+            <span>MySQL - PostgreeSQL</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <SupabaseIcon />
+            <span>Supabase - Firestore</span>
           </div>
 
           <div className="flex items-center gap-2">
@@ -155,6 +173,23 @@ export default function IndexPage() {
           <div className="flex items-center gap-2">
             <GithubIcon />
             <span>Git & GitHub</span>
+          </div>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Soft skills</h2>
+          <div className="flex items-center gap-2">
+            <CleanCodeIcon />
+            <span>Código limpo</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CommunicationIcon />
+            <span>Boa comunicação</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <AdaptabilityIcon />
+            <span>Adaptabilidade e boa convivência</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <LearningIcon />
+            <span>Aprendizado constante</span>
           </div>
         </div>
       </section>

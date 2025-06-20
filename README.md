@@ -1,55 +1,44 @@
-# Next.js & HeroUI Template
+# 🌐 Portfólio Pessoal - Calebe Liasse
 
-This is a template for creating applications using Next.js 14 (pages directory) and HeroUI (v2).
+Este é meu portfólio pessoal desenvolvido com **Next.js** e **Supabase**, onde apresento meus projetos, habilidades e experiências nas áreas de desenvolvimento web, mobile e estratégias digitais.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/next-pages-template)
+## 📌 Sobre o Projeto
 
-> Note: Since Next.js 14, the pages router is recommend migrating to the [new App Router](https://nextjs.org/docs/app) to leverage React's latest features
->
-> Read more: [Pages Router](https://nextjs.org/docs/pages)
+O objetivo deste projeto é servir como uma vitrine dos meus trabalhos, com uma interface moderna, responsiva, acessível e com recursos de administração para facilitar a gestão dos projetos apresentados.
 
-## Technologies Used
+Você pode visualizar o portfólio em produção aqui: **[https://seu-dominio.vercel.app](https://seu-dominio.vercel.app)**
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+---
 
-## How to Use
+## 🚀 Tecnologias Utilizadas
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- **[Next.js 14](https://nextjs.org/docs/pages)** — Estrutura do projeto com Pages Router
+- **[HeroUI v2](https://heroui.com)** — UI moderna com componentes acessíveis e otimizados
+- **[Tailwind CSS](https://tailwindcss.com)** — Estilização rápida e responsiva
+- **[Supabase](https://supabase.com)** — Backend como serviço para banco de dados e storage
+- **[TypeScript](https://www.typescriptlang.org)** — Tipagem estática para mais segurança
+- **[Framer Motion](https://www.framer.com/motion)** — Animações fluidas e elegantes
+- **[next-themes](https://github.com/pacocoursey/next-themes)** — Alternância entre tema claro e escuro
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-pages-template
-```
+---
 
-### Install dependencies
+## ✨ Funcionalidades
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+- 📂 Cadastro, edição e exclusão de projetos via painel administrativo (restrito)
+- 🎞️ Suporte a **múltiplas imagens** e **vídeo por projeto**
+- 🌓 Alternância de tema (claro/escuro)
+- 🌍 Links para redes sociais e repositórios
+- 📱 Interface 100% responsiva e acessível
 
-```bash
-npm install
-```
+---
 
-### Run the development server
+## 📁 Estrutura do Projeto
 
 ```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/heroui-inc/next-pages-template/blob/main/LICENSE).
+├── components/         # Componentes reutilizáveis (UI, ícones, etc)
+├── pages/              # Páginas (usando Pages Router do Next.js)
+├── lib/                # Lógicas de manipulação de dados (CRUD Supabase)
+├── layouts/            # Layouts principais como DefaultLayout
+├── config/             # Configuração global (site, links, rotas)
+├── public/             # Arquivos públicos (favicon, imagens etc)
+├── styles/             # Estilizações adicionais

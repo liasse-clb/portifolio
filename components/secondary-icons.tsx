@@ -71,3 +71,162 @@ export const NextIcon: React.FC<IconSvgProps> = ({
         </svg>
     );
 };
+
+export const MysqlIcon: React.FC<IconSvgProps> = ({
+   size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      {...props}
+    >
+      <g fill="#20C4F4">
+        <path d="M256 0C150 0 64 36 64 80v352c0 44 86 80 192 80s192-36 192-80V80c0-44-86-80-192-80zm0 32c96.5 0 160 30.8 160 48s-63.5 48-160 48S96 97.2 96 80s63.5-48 160-48zm160 109.7v33.8c0 17.2-63.5 48-160 48S96 192.7 96 175.5v-33.8c29.4 20.5 89.9 32.3 160 32.3s130.6-11.8 160-32.3zm0 80v33.8c0 17.2-63.5 48-160 48S96 272.7 96 255.5v-33.8c29.4 20.5 89.9 32.3 160 32.3s130.6-11.8 160-32.3zm0 80v33.8c0 17.2-63.5 48-160 48S96 352.7 96 335.5v-33.8c29.4 20.5 89.9 32.3 160 32.3s130.6-11.8 160-32.3zm0 80v30.3c0 17.2-63.5 48-160 48S96 419.2 96 402v-30.3c29.4 20.5 89.9 32.3 160 32.3s130.6-11.8 160-32.3z"/>
+      </g>
+    </svg>
+  );
+};
+
+export const SupabaseIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={w}
+      height={h}
+      viewBox="0 0 48 48"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="#71c674"
+        d="M43.9,22.5L27.5,43.3c-1.2,1.4-3.5,0.6-3.5-1.2V30H6.6c-2.1,0-3.3-2.5-2-4.1L20.7,5.1
+           c1.1-1.5,3.4-0.7,3.4,1.2v12.1h17.7C44.1,18.4,45.3,20.8,43.9,22.5z"
+      />
+    </svg>
+  );
+};
+
+export const CleanCodeIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect x="12" y="8" width="40" height="48" rx="4" stroke="#4CAF50" strokeWidth="3" fill="#E8F5E9"/>
+      <line x1="20" y1="20" x2="44" y2="20" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" />
+      <line x1="20" y1="28" x2="44" y2="28" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" />
+      <line x1="20" y1="36" x2="44" y2="36" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" />
+      <line x1="20" y1="44" x2="36" y2="44" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+};
+
+export const CommunicationIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect x="8" y="16" width="48" height="32" rx="8" fill="#2196F3"/>
+      <path d="M12 48L20 40H52C54.209 40 56 38.209 56 36V20C56 17.791 54.209 16 52 16H12C9.791 16 8 17.791 8 20V44C8 46.209 9.791 48 12 48Z" fill="#BBDEFB"/>
+      <path d="M20 40L12 48V44C12 46.209 13.791 48 16 48H52C54.209 48 56 46.209 56 44V36H20Z" fill="#1976D2"/>
+    </svg>
+  );
+};
+
+export const AdaptabilityIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx="24" cy="32" r="16" fill="#FFC107" fillOpacity="0.8" />
+      <circle cx="40" cy="32" r="16" fill="#FF9800" fillOpacity="0.8" />
+      <circle cx="32" cy="32" r="10" fill="#FFB300" />
+    </svg>
+  );
+};
+
+export const LearningIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  const w = size || width;
+  const h = size || height;
+
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M32 12a12 12 0 00-12 12c0 6 6 12 6 12h12s6-6 6-12a12 12 0 00-12-12z"
+        stroke="#FFEB3B"
+        strokeWidth="4"
+        fill="#FFFDE7"
+      />
+      <rect x="26" y="36" width="12" height="10" rx="2" fill="#575894" />
+      <line x1="32" y1="46" x2="32" y2="52" stroke="#FBC02D" strokeWidth="3" />
+    </svg>
+  );
+};
