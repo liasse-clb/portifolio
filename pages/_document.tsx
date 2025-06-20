@@ -9,10 +9,10 @@ export default function Document() {
       <Head />
       <body
         className={clsx(
-          "h-[300px] bg-background font-sans antialiased bg-cover bg-center bg-no-repeat",
+          "h-[450px] bg-background font-sans antialiased bg-cover bg-center bg-no-repeat",
           fontSans.variable,
         )}
-        style={{ backgroundImage: 'url("/banner-clb.png")' }}
+        style={{ backgroundImage: 'url("/banner-clb.jpg")' }}
       >
         <Main />
         <NextScript />

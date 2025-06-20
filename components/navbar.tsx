@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -13,6 +14,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
+import { myAppHook } from "@/pages/auth/context/AppUtils";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
   TwitterIcon,
@@ -23,6 +25,8 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
+  const { isLoggedIn } = myAppHook();
+
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -39,7 +43,6 @@ export const Navbar = () => {
                   linkStyles({ color: "foreground" }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium",
                 )}
-                color="foreground"
                 href={item.href}
               >
                 {item.label}
@@ -49,24 +52,21 @@ export const Navbar = () => {
         </div>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
+      <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
         <NavbarItem className="hidden sm:flex gap-2">
           <Link isExternal href={siteConfig.links.whatsapp}>
             <WhatsappIcon className="text-default-500" />
           </Link>
-          <Link isExternal href={siteConfig.links.linkedin} title="LinkedIn">
+          <Link isExternal href={siteConfig.links.linkedin}>
             <LinkedInIcon className="text-default-500" />
           </Link>
-          <Link isExternal href={siteConfig.links.instagram} title="Instagram">
+          <Link isExternal href={siteConfig.links.instagram}>
             <InstagramIcon className="text-default-500" />
           </Link>
-          <Link isExternal href={siteConfig.links.twitter} title="Twitter">
+          <Link isExternal href={siteConfig.links.twitter}>
             <TwitterIcon className="text-default-500" />
           </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
+          <Link isExternal href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
@@ -84,22 +84,40 @@ export const Navbar = () => {
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
+            <NavbarMenuItem key={item.href}>
               <Link
+                href={item.href}
                 color={
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                    ? "danger"
+                    : "foreground"
                 }
-                href="#"
                 size="lg"
               >
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
+
+          <div className="flex flex-col justify-center gap-4">
+            <Link color="danger" isExternal href={siteConfig.links.whatsapp}>
+              <WhatsappIcon className="mr-2" /> Whatsapp
+            </Link>
+            <Link color="danger" isExternal href={siteConfig.links.linkedin}>
+              <LinkedInIcon className="mr-2"/> LinkedIn
+            </Link>
+            <Link color="danger" isExternal href={siteConfig.links.instagram}>
+              <InstagramIcon className="mr-2"/> Instagram
+            </Link>
+            <Link color="danger" isExternal href={siteConfig.links.twitter}>
+              <TwitterIcon className="mr-2"/> Twitter
+            </Link>
+            <Link color="danger" isExternal href={siteConfig.links.github}>
+              <GithubIcon className="mr-2"/> GitHub
+            </Link>
+          </div>
         </div>
       </NavbarMenu>
     </HeroUINavbar>

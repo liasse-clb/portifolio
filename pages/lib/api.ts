@@ -1,9 +1,8 @@
-// lib/api.ts
 import { supabase } from "./supabase";
 
 export const getProjects = async () => {
   const { data, error } = await supabase
-    .from("Calebe") // nome da sua tabela
+    .from("Calebe") 
     .select("*")
     .order("created_at", { ascending: false })
 

@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Portifólio",
+  description: "Meu portifólio pessoal para exibir meus trabalhos e projetos",
   navItems: [
     {
       label: "Inicio",
@@ -14,11 +14,7 @@ export const siteConfig = {
     },
     {
       label: "Trabalhos",
-      href: "/projects",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
+      href: "/auth/projects",
     },
     {
       label: "Sobre",
@@ -26,41 +22,29 @@ export const siteConfig = {
     },
     {
       label: "Admin",
-      href: "/admin",
+      href: "/auth/login",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Inicio",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Contato",
+      href: "/contact",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Trabalhos",
+      href: "/auth/projects",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Sobre",
+      href: "/about",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Admin",
+      href: "/auth/login",
     },
   ],
   links: {
@@ -69,6 +53,6 @@ export const siteConfig = {
     docs: "https://heroui.com",
     instagram: "https://www.instagram.com/liasse.lbs/",
     linkedin: "https://www.linkedin.com/in/calebe-liasse-71488430b/",
-    whatsapp: "https://w.app/2zxydq",
+    whatsapp: "https://wa.me/5571988932163?text=Quero%20uma%20reuni%C3%A3o%20com%20voc%C3%AA!",
   },
 };

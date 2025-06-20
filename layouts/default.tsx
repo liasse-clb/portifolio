@@ -3,6 +3,8 @@ import { Link } from "@heroui/link";
 import { Head } from "./head";
 
 import { Navbar } from "@/components/navbar";
+import { GithubIcon, InstagramIcon, LinkedInIcon } from "@/components/icons";
+import { siteConfig } from "@/config/site";
 
 export default function DefaultLayout({
   children,
@@ -22,28 +24,37 @@ export default function DefaultLayout({
           </p>
 
           <div className="flex items-center gap-3">
-            <Link
-              isExternal
-              href="https://www.heroui.com"
-              className="flex items-center gap-1 hover:text-primary transition-colors"
-              title="Powered by HeroUI"
-            >
-              <span>Feito com</span>
-              <p className="text-primary font-semibold">HeroUI</p>
-            </Link>
 
             <Link
               isExternal
-              className="hover:text-primary transition-colors"
-              href="https://github.com/liasse-clb"
+              className="hover:text-danger transition-colors"
+              href={siteConfig.links.github}
               title="GitHub"
             >
+              <GithubIcon />
               GitHub
+            </Link>
+            <Link
+              isExternal
+              className="hover:text-danger transitio-colors"
+              href={siteConfig.links.instagram}
+              title="Instagram"
+            >
+              <InstagramIcon />
+              Instagram
+            </Link>
+            <Link 
+            isExternal
+            className="hover:text-danger transition-colors"
+            href={siteConfig.links.linkedin}
+            title="LinkedIn"
+            >
+              <LinkedInIcon/>
+              LinkedIn
             </Link>
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
