@@ -1,8 +1,11 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable jsx-a11y/media-has-caption */
 "use client";
 import { button as buttonStyles } from "@heroui/theme";
 import { useEffect, useState } from "react";
-import { getAllProjects } from "@/pages/lib/portifolio";
 import { Card, CardFooter, Button, Link } from "@heroui/react";
+
+import { getAllProjects } from "@/pages/lib/portifolio";
 import { GithubIcon } from "@/components/icons";
 
 export default function ProjectsPage() {
@@ -13,6 +16,7 @@ export default function ProjectsPage() {
   useEffect(() => {
     async function fetchProjects() {
       const data = await getAllProjects();
+
       setProjects(data);
       setLoading(false);
     }
@@ -20,17 +24,27 @@ export default function ProjectsPage() {
     fetchProjects();
   }, []);
 
-  const handleSlide = (projectId: string, direction: "prev" | "next", total: number) => {
+  const handleSlide = (
+    projectId: string,
+    direction: "prev" | "next",
+    total: number,
+  ) => {
     setActiveSlide((prev) => {
       const current = prev[projectId] || 0;
-      const newIndex = direction === "next" ? (current + 1) % total : (current - 1 + total) % total;
+      const newIndex =
+        direction === "next"
+          ? (current + 1) % total
+          : (current - 1 + total) % total;
+
       return { ...prev, [projectId]: newIndex };
     });
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900
-    shadow-md transition-all duration-300 p-3 m-3 rounded-lg">
+    <div
+      className="bg-white dark:bg-gray-900
+    shadow-md transition-all duration-300 p-3 m-3 rounded-lg"
+    >
       <h1 className="text-3xl font-bold text-left mb-8">Meus Projetos</h1>
 
       {loading ? (
@@ -65,21 +79,23 @@ export default function ProjectsPage() {
                               <video
                                 key={`${project.id}-video-${index}`}
                                 controls
+                                className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                  isActive
+                                    ? "opacity-100 z-10 pointer-events-auto"
+                                    : "opacity-0 z-0 pointer-events-none"
+                                }`}
                                 src={item}
-                                className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                  ? "opacity-100 z-10 pointer-events-auto"
-                                  : "opacity-0 z-0 pointer-events-none"
-                                  }`}
                               />
                             ) : (
                               <img
                                 key={`${project.id}-img-${index}`}
-                                src={item}
                                 alt={project.title}
-                                className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                  ? "opacity-100 z-10 pointer-events-auto"
-                                  : "opacity-0 z-0 pointer-events-none"
-                                  }`}
+                                className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                  isActive
+                                    ? "opacity-100 z-10 pointer-events-auto"
+                                    : "opacity-0 z-0 pointer-events-none"
+                                }`}
+                                src={item}
                               />
                             );
                           })}
@@ -88,14 +104,26 @@ export default function ProjectsPage() {
                         {mediaItems.length > 1 && (
                           <>
                             <button
-                              onClick={() => handleSlide(project.id, "prev", mediaItems.length)}
                               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 dark:bg-black/50 px-2 py-1 rounded-full z-20"
+                              onClick={() =>
+                                handleSlide(
+                                  project.id,
+                                  "prev",
+                                  mediaItems.length,
+                                )
+                              }
                             >
                               ◀
                             </button>
                             <button
-                              onClick={() => handleSlide(project.id, "next", mediaItems.length)}
                               className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 dark:bg-black/50 px-2 py-1 rounded-full z-20"
+                              onClick={() =>
+                                handleSlide(
+                                  project.id,
+                                  "next",
+                                  mediaItems.length,
+                                )
+                              }
                             >
                               ▶
                             </button>
@@ -115,14 +143,14 @@ export default function ProjectsPage() {
                     </p>
                     {project.link && (
                       <Button
+                        as="a"
                         className="text-tiny text-white bg-black/30"
                         color="default"
+                        href={project.link}
                         radius="lg"
                         size="sm"
-                        variant="flat"
-                        as="a"
-                        href={project.link}
                         target="_blank"
+                        variant="flat"
                       >
                         Visualizar
                       </Button>
@@ -132,15 +160,20 @@ export default function ProjectsPage() {
 
                 <div className="mt-2 px-1 text-left">
                   {project.description && (
-                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                      {project.description}
+                    </p>
                   )}
                   {project.github_link && (
                     <Link
                       isExternal
+                      className={buttonStyles({
+                        variant: "bordered",
+                        radius: "full",
+                      })}
                       href={project.github_link}
-                      target="_blank"
                       rel="noopener noreferrer"
-                      className={buttonStyles({ variant: "bordered", radius: "full" })}
+                      target="_blank"
                     >
                       <GithubIcon />
                       Ver no GitHub

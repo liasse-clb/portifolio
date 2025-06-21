@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import toast from "react-hot-toast";
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 import {
   createProject,
@@ -10,38 +10,39 @@ import {
   deleteProjectById,
   uploadFile,
   updateProject,
-} from "../../lib/portifolio";
+} from '../../lib/portifolio';
+import { myAppHook } from '../context/AppUtils';
 
-import useProtectedRoute from "@/pages/hooks/useProtectRoute";
-import { myAppHook } from "../context/AppUtils";
-import { useLogout } from "@/pages/lib/logout";
-import { Navbar } from "@/components/navbar";
+import useProtectedRoute from '@/pages/hooks/useProtectRoute';
+import { useLogout } from '@/pages/lib/logout';
+import { Navbar } from '@/components/navbar';
 
 export default function AdminPage() {
   useProtectedRoute();
   const logout = useLogout();
   const { userProfile } = myAppHook();
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [github_link, setgithub_link] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [link, setLink] = useState('');
+  const [github_link, setgithub_link] = useState('');
   const [imageFiles, setImageFiles] = useState<File[]>([]);
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [projects, setProjects] = useState<any[]>([]);
   const [editingProjectId, setEditingProjectId] = useState<string | null>(null);
-  const [editTitle, setEditTitle] = useState("");
-  const [editDescription, setEditDescription] = useState("");
-  const [editLink, setEditLink] = useState("");
+  const [editTitle, setEditTitle] = useState('');
+  const [editDescription, setEditDescription] = useState('');
+  const [editLink, setEditLink] = useState('');
 
   useEffect(() => {
     async function loadProjects() {
       try {
         const data = await getAllProjects();
+
         setProjects(data);
       } catch (err) {
-        toast.error("Erro ao carregar projetos");
-        console.error("Erro getAllProjects:", err);
+        toast.error('Erro ao carregar projetos');
+        console.error('Erro getAllProjects:', err);
       }
     }
     loadProjects();
@@ -49,7 +50,8 @@ export default function AdminPage() {
 
   const handleCreate = async () => {
     if (!title.trim()) {
-      toast.error("O título é obrigatório");
+      toast.error('O título é obrigatório');
+
       return;
     }
 
@@ -58,24 +60,24 @@ export default function AdminPage() {
 
     try {
       if (imageFiles.length > 0) {
-        toast.loading("Enviando imagens...");
-        const uploads = await Promise.all(
-          imageFiles.map((file) => uploadFile(file))
-        );
+        toast.loading('Enviando imagens...');
+        const uploads = await Promise.all(imageFiles.map((file) => uploadFile(file)));
+
         toast.dismiss();
         uploadedImages = uploads.filter(Boolean) as string[];
 
         if (uploadedImages.length === 0) {
-          toast.error("Erro ao enviar imagens");
+          toast.error('Erro ao enviar imagens');
+
           return;
         }
       }
 
       if (videoFile) {
-        toast.loading("Enviando vídeo...");
+        toast.loading('Enviando vídeo...');
         video_url = await uploadFile(videoFile);
         toast.dismiss();
-        if (!video_url) throw new Error("Erro ao enviar vídeo");
+        if (!video_url) throw new Error('Erro ao enviar vídeo');
       }
 
       const result = await createProject({
@@ -88,37 +90,39 @@ export default function AdminPage() {
       });
 
       if (result?.success) {
-        toast.success("Projeto criado com sucesso!");
-        setTitle("");
-        setDescription("");
-        setLink("");
+        toast.success('Projeto criado com sucesso!');
+        setTitle('');
+        setDescription('');
+        setLink('');
         setImageFiles([]);
         setVideoFile(null);
 
         const updatedProjects = await getAllProjects();
+
         setProjects(updatedProjects);
       } else {
-        toast.error(result?.error || "Erro ao criar projeto");
+        toast.error(result?.error || 'Erro ao criar projeto');
       }
     } catch (err: any) {
       toast.dismiss();
-      toast.error(err.message || "Erro inesperado");
-      console.error("Erro ao criar projeto:", err);
+      toast.error(err.message || 'Erro inesperado');
+      console.error('Erro ao criar projeto:', err);
     }
   };
 
   const handleDelete = async (id: string) => {
     try {
       const success = await deleteProjectById(id);
+
       if (success) {
         setProjects((prev) => prev.filter((proj) => proj.id !== id));
-        toast.success("Projeto excluído com sucesso");
+        toast.success('Projeto excluído com sucesso');
       } else {
-        toast.error("Erro ao excluir projeto");
+        toast.error('Erro ao excluir projeto');
       }
     } catch (err) {
-      toast.error("Erro ao excluir projeto");
-      console.error("Erro deleteProjectById:", err);
+      toast.error('Erro ao excluir projeto');
+      console.error('Erro deleteProjectById:', err);
     }
   };
 
@@ -133,7 +137,7 @@ export default function AdminPage() {
       const result = await updateProject(id, updatedFields);
 
       if (result?.success) {
-        toast.success("Projeto atualizado");
+        toast.success('Projeto atualizado');
         setProjects((prevProjects) =>
           prevProjects.map((project) =>
             project.id === id ? { ...project, ...updatedFields } : project
@@ -141,10 +145,10 @@ export default function AdminPage() {
         );
         setEditingProjectId(null);
       } else {
-        toast.error(result?.error || "Erro ao atualizar");
+        toast.error(result?.error || 'Erro ao atualizar');
       }
     } catch (err: any) {
-      toast.error(err.message || "Erro inesperado");
+      toast.error(err.message || 'Erro inesperado');
     }
   };
 
@@ -163,8 +167,8 @@ export default function AdminPage() {
           <h1 className="text-2xl font-bold">Painel de Admin</h1>
           {userProfile && <p className="mt-2">Bem-vindo, {userProfile.email}</p>}
           <button
-            onClick={logout}
             className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            onClick={logout}
           >
             Sair
           </button>
@@ -173,36 +177,36 @@ export default function AdminPage() {
         <div className="mt-10 p-4 bg-gray-100 dark:bg-gray-800 rounded">
           <h2 className="text-xl font-semibold mb-4">Criar Novo Projeto</h2>
           <input
-            type="text"
-            placeholder="Título *"
             className="w-full mb-2 p-2 rounded"
+            placeholder="Título *"
+            type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
-            placeholder="Descrição"
             className="w-full mb-2 p-2 rounded"
+            placeholder="Descrição"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="url"
-            placeholder="Link"
             className="w-full mb-2 p-2 rounded"
+            placeholder="Link"
+            type="url"
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
           <input
-            type="url"
-            placeholder="Link do GitHub"
             className="w-full mb-2 p-2 rounded"
+            placeholder="Link do GitHub"
+            type="url"
             value={github_link}
             onChange={(e) => setgithub_link(e.target.value)}
           />
           <input
-            type="file"
-            accept="image/*"
             multiple
+            accept="image/*"
+            type="file"
             onChange={(e) => setImageFiles(Array.from(e.target.files || []))}
           />
           {imageFiles.length > 0 && (
@@ -210,17 +214,17 @@ export default function AdminPage() {
               {imageFiles.map((img, i) => (
                 <img
                   key={i}
-                  src={URL.createObjectURL(img)}
                   alt={`Preview ${i + 1}`}
                   className="w-full h-auto rounded"
+                  src={URL.createObjectURL(img)}
                 />
               ))}
             </div>
           )}
           <input
-            type="file"
             accept="video/*"
             className="w-full mb-2"
+            type="file"
             onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
           />
           {videoFile && (
@@ -231,8 +235,8 @@ export default function AdminPage() {
             />
           )}
           <button
-            onClick={handleCreate}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            onClick={handleCreate}
           >
             Criar Projeto
           </button>
@@ -265,14 +269,14 @@ export default function AdminPage() {
                     />
                     <div className="flex gap-2">
                       <button
-                        onClick={() => handleUpdate(project.id)}
                         className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                        onClick={() => handleUpdate(project.id)}
                       >
                         Salvar
                       </button>
                       <button
-                        onClick={() => setEditingProjectId(null)}
                         className="bg-gray-400 text-white px-3 py-1 rounded hover:bg-gray-600"
+                        onClick={() => setEditingProjectId(null)}
                       >
                         Cancelar
                       </button>
@@ -284,20 +288,20 @@ export default function AdminPage() {
                     <p>{project.description}</p>
                     {project.link && (
                       <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-blue-500 underline"
+                        href={project.link}
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         {project.link}
                       </a>
                     )}
                     {project.github_link && (
                       <a
-                        href={project.github_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-sm text-gray-600 dark:text-gray-300 underline"
+                        href={project.github_link}
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Ver código no GitHub
                       </a>
@@ -307,9 +311,9 @@ export default function AdminPage() {
                       project.image_url.map((img: string, i: number) => (
                         <img
                           key={i}
-                          src={img}
                           alt={`${project.title} ${i + 1}`}
                           className="w-full h-auto rounded mt-2"
+                          src={img}
                         />
                       ))}
                     {project.video_url && (
@@ -321,19 +325,19 @@ export default function AdminPage() {
                     )}
                     <div className="flex gap-2 mt-2">
                       <button
+                        className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
                         onClick={() => {
                           setEditingProjectId(project.id);
                           setEditTitle(project.title);
-                          setEditDescription(project.description || "");
-                          setEditLink(project.link || "");
+                          setEditDescription(project.description || '');
+                          setEditLink(project.link || '');
                         }}
-                        className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
                       >
                         Editar
                       </button>
                       <button
-                        onClick={() => handleDelete(project.id)}
                         className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700"
+                        onClick={() => handleDelete(project.id)}
                       >
                         Excluir
                       </button>

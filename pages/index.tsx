@@ -1,17 +1,29 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable jsx-a11y/media-has-caption */
 "use client";
 import { button as buttonStyles } from "@heroui/theme";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Link } from "@heroui/link";
+import { Card, CardFooter, Button } from "@heroui/react";
+
+import ProjectsPage from "./auth/projects";
 
 import { FileIcon, WhatsappIcon } from "@/components/icons";
-import { AdaptabilityIcon, CleanCodeIcon, CommunicationIcon, LearningIcon, MysqlIcon, NextIcon, NodeIcon, SupabaseIcon } from "@/components/secondary-icons";
+import {
+  AdaptabilityIcon,
+  CleanCodeIcon,
+  CommunicationIcon,
+  LearningIcon,
+  MysqlIcon,
+  NextIcon,
+  NodeIcon,
+  SupabaseIcon,
+} from "@/components/secondary-icons";
 import { siteConfig } from "@/config/site";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import { getLatestProject } from "@/pages/lib/portifolio";
-import { Link } from "@heroui/link";
-import { Card, CardFooter, Button } from "@heroui/react";
-import ProjectsPage from "./auth/projects";
 
 export default function IndexPage() {
   const [latestProject, setLatestProject] = useState<any>(null);
@@ -19,6 +31,7 @@ export default function IndexPage() {
   useEffect(() => {
     async function fetchLatest() {
       const data = await getLatestProject();
+
       setLatestProject(data);
     }
     fetchLatest();
@@ -35,14 +48,19 @@ export default function IndexPage() {
             src="/Calebe.jpeg"
             width={150}
           />
-          <p className="text-gray-700 dark:text-gray-100">Calebe Liasse - Dev Web & Mobile</p>
+          <p className="text-gray-700 dark:text-gray-100">
+            Calebe Liasse - Dev Web & Mobile
+          </p>
           <br />
           <div>
             <p className="text-gray-500 dark:text-gray-300">
-              Sou totalmente comprometido com o desenvolvimento de sites e aplicativos
-              profissionais totalmente voltados para resolver os seus problemas.
+              Sou totalmente comprometido com o desenvolvimento de sites e
+              aplicativos profissionais totalmente voltados para resolver os
+              seus problemas.
             </p>
-            <p className="text-gray-500 dark:text-gray-300">Me chame agora mesmo para uma reunião! 👇</p>
+            <p className="text-gray-500 dark:text-gray-300">
+              Me chame agora mesmo para uma reunião! 👇
+            </p>
           </div>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Link
@@ -80,19 +98,22 @@ export default function IndexPage() {
 
           {latestProject ? (
             <>
-              <Card className="w-full h-[200px] mt-2 relative overflow-hidden" radius="lg">
+              <Card
+                className="w-full h-[200px] mt-2 relative overflow-hidden"
+                radius="lg"
+              >
                 <div className="relative w-full h-full">
                   {latestProject.image_url?.[0]?.includes(".mp4") ? (
                     <video
-                      src={latestProject.image_url[0]}
                       controls
                       className="object-cover w-full h-full rounded-lg"
+                      src={latestProject.image_url[0]}
                     />
                   ) : (
                     <img
-                      src={latestProject.image_url[0]}
                       alt={latestProject.title}
                       className="object-cover w-full h-full rounded-lg"
+                      src={latestProject.image_url[0]}
                     />
                   )}
                 </div>
@@ -102,14 +123,14 @@ export default function IndexPage() {
                   </p>
                   {latestProject.link && (
                     <Button
+                      as="a"
                       className="text-tiny text-white bg-black/30"
                       color="default"
+                      href={latestProject.link}
                       radius="lg"
                       size="sm"
-                      variant="flat"
-                      as="a"
-                      href={latestProject.link}
                       target="_blank"
+                      variant="flat"
                     >
                       Visualizar
                     </Button>
@@ -130,7 +151,11 @@ export default function IndexPage() {
           {latestProject?.github_link && (
             <Link
               isExternal
-              className={buttonStyles({ variant: "bordered", radius: "full", color: "default" })}
+              className={buttonStyles({
+                variant: "bordered",
+                radius: "full",
+                color: "default",
+              })}
               href={latestProject.github_link}
             >
               <GithubIcon size={25} />
@@ -140,7 +165,9 @@ export default function IndexPage() {
         </div>
 
         <div className="bg-white dark:bg-gray-900/70 p-6 rounded-xl mt-10 w-72 sm:w-80 shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 mx-auto flex flex-col items-start gap-4">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Competências</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
+            Competências
+          </h2>
 
           <div className="flex items-center gap-2">
             <NextIcon />
@@ -163,7 +190,11 @@ export default function IndexPage() {
           </div>
 
           <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+            <svg
+              className="w-5 h-5 text-purple-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
               <path d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zM6 4a1 1 0 011-1h6a1 1 0 011 1v12a1 1 0 01-1 1H7a1 1 0 01-1-1V4z" />
               <path d="M9 16h2v1H9v-1z" />
             </svg>
@@ -174,7 +205,9 @@ export default function IndexPage() {
             <GithubIcon />
             <span>Git & GitHub</span>
           </div>
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Soft skills</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
+            Soft skills
+          </h2>
           <div className="flex items-center gap-2">
             <CleanCodeIcon />
             <span>Código limpo</span>

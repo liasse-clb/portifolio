@@ -42,3 +42,4 @@ Você pode visualizar o portfólio em produção aqui: **[https://seu-dominio.ve
 ├── config/             # Configuração global (site, links, rotas)
 ├── public/             # Arquivos públicos (favicon, imagens etc)
 ├── styles/             # Estilizações adicionais
+```

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Html, Head, Main, NextScript } from "next/document";
 import clsx from "clsx";
 
