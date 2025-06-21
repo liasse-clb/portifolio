@@ -1,37 +1,33 @@
 /* eslint-disable no-console */
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
-import { supabase } from "@/pages/lib/supabase";
+import { supabase } from '@/pages/lib/supabase';
 
-const BUCKET_NAME = "portifolio-uploads";
+const BUCKET_NAME = 'portifolio-uploads';
 
 export async function uploadFile(file: File): Promise<string | null> {
   if (!file) return null;
 
-  const fileExt = file.name.split(".").pop();
+  const fileExt = file.name.split('.').pop();
   const filePath = `${uuidv4()}.${fileExt}`;
 
-  const { error: uploadError } = await supabase.storage
-    .from(BUCKET_NAME)
-    .upload(filePath, file, {
-      cacheControl: "3600",
-      upsert: false,
-    });
+  const { error: uploadError } = await supabase.storage.from(BUCKET_NAME).upload(filePath, file, {
+    cacheControl: '3600',
+    upsert: false,
+  });
 
   if (uploadError) {
-    console.error("Erro ao fazer upload:", uploadError.message);
+    console.error('Erro ao fazer upload:', uploadError.message);
 
     return null;
   }
 
-  const { data: publicUrlData } = supabase.storage
-    .from(BUCKET_NAME)
-    .getPublicUrl(filePath);
+  const { data: publicUrlData } = supabase.storage.from(BUCKET_NAME).getPublicUrl(filePath);
 
   const publicUrl = publicUrlData?.publicUrl;
 
   if (!publicUrl) {
-    console.error("Erro ao obter URL pública.");
+    console.error('Erro ao obter URL pública.');
 
     return null;
   }
@@ -55,14 +51,14 @@ export async function createProject({
   github_link?: string;
 }) {
   try {
-    const { data, error } = await supabase.from("portfolio_projects").insert([
+    const { data, error } = await supabase.from('portfolio_projects').insert([
       {
         title,
-        description: description ?? "",
+        description: description ?? '',
         image_url: image_url ?? [],
         video_url: video_url ?? null,
-        link: link ?? "",
-        github_link: github_link ?? "",
+        link: link ?? '',
+        github_link: github_link ?? '',
       },
     ]);
 
@@ -76,12 +72,12 @@ export async function createProject({
 
 export async function getAllProjects() {
   const { data, error } = await supabase
-    .from("portfolio_projects")
-    .select("*")
-    .order("created_at", { ascending: false });
+    .from('portfolio_projects')
+    .select('*')
+    .order('created_at', { ascending: false });
 
   if (error) {
-    console.error("Erro ao buscar projetos:", error.message);
+    console.error('Erro ao buscar projetos:', error.message);
 
     return [];
   }
@@ -98,15 +94,12 @@ export async function updateProject(
     video_url?: string | null;
     link?: string;
     github_link?: string;
-  },
+  }
 ) {
-  const { data, error } = await supabase
-    .from("portfolio_projects")
-    .update(updates)
-    .eq("id", id);
+  const { data, error } = await supabase.from('portfolio_projects').update(updates).eq('id', id);
 
   if (error) {
-    console.error("Erro ao atualizar projeto:", error.message);
+    console.error('Erro ao atualizar projeto:', error.message);
 
     return { success: false, error: error.message };
   }
@@ -115,13 +108,10 @@ export async function updateProject(
 }
 
 export async function deleteProjectById(id: string) {
-  const { error } = await supabase
-    .from("portfolio_projects")
-    .delete()
-    .eq("id", id);
+  const { error } = await supabase.from('portfolio_projects').delete().eq('id', id);
 
   if (error) {
-    console.error("Erro ao deletar projeto:", error.message);
+    console.error('Erro ao deletar projeto:', error.message);
 
     return false;
   }
@@ -131,9 +121,9 @@ export async function deleteProjectById(id: string) {
 
 export async function getLatestProject() {
   const { data, error } = await supabase
-    .from("portfolio_projects")
-    .select("*")
-    .order("created_at", { ascending: false })
+    .from('portfolio_projects')
+    .select('*')
+    .order('created_at', { ascending: false })
     .limit(1);
 
   if (error) throw new Error(error.message);

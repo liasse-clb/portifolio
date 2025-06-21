@@ -1,12 +1,11 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable jsx-a11y/media-has-caption */
-"use client";
-import { button as buttonStyles } from "@heroui/theme";
-import { useEffect, useState } from "react";
-import { Card, CardFooter, Button, Link } from "@heroui/react";
+'use client';
+import { button as buttonStyles } from '@heroui/theme';
+import { useEffect, useState } from 'react';
+import { Card, CardFooter, Button, Link } from '@heroui/react';
 
-import { getAllProjects } from "@/pages/lib/portifolio";
-import { GithubIcon } from "@/components/icons";
+import { getAllProjects } from '@/pages/lib/portifolio';
+import { GithubIcon } from '@/components/icons';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -24,17 +23,10 @@ export default function ProjectsPage() {
     fetchProjects();
   }, []);
 
-  const handleSlide = (
-    projectId: string,
-    direction: "prev" | "next",
-    total: number,
-  ) => {
+  const handleSlide = (projectId: string, direction: 'prev' | 'next', total: number) => {
     setActiveSlide((prev) => {
       const current = prev[projectId] || 0;
-      const newIndex =
-        direction === "next"
-          ? (current + 1) % total
-          : (current - 1 + total) % total;
+      const newIndex = direction === 'next' ? (current + 1) % total : (current - 1 + total) % total;
 
       return { ...prev, [projectId]: newIndex };
     });
@@ -73,7 +65,7 @@ export default function ProjectsPage() {
                         <div className="relative w-full h-full">
                           {mediaItems.map((item: string, index: number) => {
                             const isActive = index === currentIndex;
-                            const isVideo = item.includes(".mp4");
+                            const isVideo = item.includes('.mp4');
 
                             return isVideo ? (
                               <video
@@ -81,8 +73,8 @@ export default function ProjectsPage() {
                                 controls
                                 className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
                                   isActive
-                                    ? "opacity-100 z-10 pointer-events-auto"
-                                    : "opacity-0 z-0 pointer-events-none"
+                                    ? 'opacity-100 z-10 pointer-events-auto'
+                                    : 'opacity-0 z-0 pointer-events-none'
                                 }`}
                                 src={item}
                               />
@@ -92,8 +84,8 @@ export default function ProjectsPage() {
                                 alt={project.title}
                                 className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
                                   isActive
-                                    ? "opacity-100 z-10 pointer-events-auto"
-                                    : "opacity-0 z-0 pointer-events-none"
+                                    ? 'opacity-100 z-10 pointer-events-auto'
+                                    : 'opacity-0 z-0 pointer-events-none'
                                 }`}
                                 src={item}
                               />
@@ -105,25 +97,13 @@ export default function ProjectsPage() {
                           <>
                             <button
                               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 dark:bg-black/50 px-2 py-1 rounded-full z-20"
-                              onClick={() =>
-                                handleSlide(
-                                  project.id,
-                                  "prev",
-                                  mediaItems.length,
-                                )
-                              }
+                              onClick={() => handleSlide(project.id, 'prev', mediaItems.length)}
                             >
                               ◀
                             </button>
                             <button
                               className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 dark:bg-black/50 px-2 py-1 rounded-full z-20"
-                              onClick={() =>
-                                handleSlide(
-                                  project.id,
-                                  "next",
-                                  mediaItems.length,
-                                )
-                              }
+                              onClick={() => handleSlide(project.id, 'next', mediaItems.length)}
                             >
                               ▶
                             </button>
@@ -168,8 +148,8 @@ export default function ProjectsPage() {
                     <Link
                       isExternal
                       className={buttonStyles({
-                        variant: "bordered",
-                        radius: "full",
+                        variant: 'bordered',
+                        radius: 'full',
                       })}
                       href={project.github_link}
                       rel="noopener noreferrer"

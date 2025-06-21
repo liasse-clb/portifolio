@@ -22,28 +22,7 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-  globalIgnores([
-    '.now/*',
-    '**/*.css',
-    '**/.changeset',
-    '**/dist',
-    'esm/*',
-    'public/*',
-    'tests/*',
-    'scripts/*',
-    '**/*.config.js',
-    '**/.DS_Store',
-    '**/node_modules',
-    '**/coverage',
-    '**/.next',
-    '**/build',
-    '!**/.commitlintrc.cjs',
-    '!**/.lintstagedrc.cjs',
-    '!**/jest.config.js',
-    '!**/plopfile.js',
-    '!**/react-shim.js',
-    '!**/tsup.config.ts',
-  ]),
+  globalIgnores([]),
   {
     extends: fixupConfigRules(
       compat.extends(
@@ -70,7 +49,7 @@ export default defineConfig([
       },
 
       parser: tsParser,
-      ecmaVersion: 12,
+      ecmaVersion: 2022,
       sourceType: 'module',
 
       parserOptions: {
@@ -90,13 +69,23 @@ export default defineConfig([
 
     rules: {
       'no-console': 'warn',
-      'react/prop-types': 'warn',
-      'react/jsx-uses-react': 'warn',
-      'react/react-in-jsx-scope': 'warn',
+      'react/prop-types': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
       'react-hooks/exhaustive-deps': 'warn',
       'jsx-a11y/click-events-have-key-events': 'warn',
       'jsx-a11y/interactive-supports-focus': 'warn',
-      'prettier/prettier': 'warn',
+      'prettier/prettier': [
+        'warn',
+        {
+          singleQuote: true,
+          semi: true,
+          trailingComma: 'es5',
+          printWidth: 100,
+          tabWidth: 2,
+          endOfLine: 'auto',
+        },
+      ],
       'no-unused-vars': 'warn',
       'unused-imports/no-unused-vars': 'warn',
       'unused-imports/no-unused-imports': 'warn',
@@ -123,7 +112,6 @@ export default defineConfig([
             'sibling',
             'index',
           ],
-
           pathGroups: [
             {
               pattern: '~/**',
@@ -131,13 +119,11 @@ export default defineConfig([
               position: 'after',
             },
           ],
-
           'newlines-between': 'always',
         },
       ],
 
       'react/self-closing-comp': 'warn',
-
       'react/jsx-sort-props': [
         'warn',
         {

@@ -25,7 +25,7 @@ import {
 } from '@/components/icons';
 
 export const Navbar = () => {
-  const { isLoggedIn } = myAppHook();
+  myAppHook();
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">

@@ -1,8 +1,7 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { Html, Head, Main, NextScript } from "next/document";
-import clsx from "clsx";
+import { Html, Head, Main, NextScript } from 'next/document';
+import clsx from 'clsx';
 
-import { fontSans } from "@/config/fonts";
+import { fontSans } from '@/config/fonts';
 
 export default function Document() {
   return (
@@ -10,8 +9,8 @@ export default function Document() {
       <Head />
       <body
         className={clsx(
-          "h-[450px] bg-background font-sans antialiased bg-cover bg-center bg-no-repeat",
-          fontSans.variable,
+          'h-[450px] bg-background font-sans antialiased bg-cover bg-center bg-no-repeat',
+          fontSans.variable
         )}
         style={{ backgroundImage: 'url("/banner-clb.jpg")' }}
       >
