@@ -4,7 +4,7 @@ import { button as buttonStyles } from '@heroui/theme';
 import { useEffect, useState } from 'react';
 import { Card, CardFooter, Button, Link } from '@heroui/react';
 
-import { getAllProjects } from '@/pages/lib/portifolio';
+import { getAllProjects } from '@/lib/portifolio';
 import { GithubIcon } from '@/components/icons';
 
 export default function ProjectsPage() {

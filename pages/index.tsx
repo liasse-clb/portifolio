@@ -22,7 +22,7 @@ import {
 import { siteConfig } from '@/config/site';
 import { GithubIcon } from '@/components/icons';
 import DefaultLayout from '@/layouts/default';
-import { getLatestProject } from '@/pages/lib/portifolio';
+import { getLatestProject } from '@/lib/portifolio';
 
 export default function IndexPage() {
   const [latestProject, setLatestProject] = useState<any>(null);

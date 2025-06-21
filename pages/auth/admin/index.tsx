@@ -10,11 +10,11 @@ import {
   deleteProjectById,
   uploadFile,
   updateProject,
-} from '../../lib/portifolio';
+} from '@/lib/portifolio';
 import { myAppHook } from '../context/AppUtils';
 
 import useProtectedRoute from '@/hooks/useProtectRoute';
-import { useLogout } from '@/pages/lib/logout';
+import { useLogout } from '@/lib/logout';
 import { Navbar } from '@/components/navbar';
 
 export default function AdminPage() {
