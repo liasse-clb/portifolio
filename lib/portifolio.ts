@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { v4 as uuidv4 } from 'uuid';
 
-import { supabase } from '@/pages/lib/supabase';
+import { supabase } from './supabase';
 
 const BUCKET_NAME = 'portifolio-uploads';
 

@@ -2,9 +2,9 @@
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 
-import { myAppHook } from '../auth/context/AppUtils';
+import { myAppHook } from '@/pages/auth/context/AppUtils';
 
-import { supabase } from '@/pages/lib/supabase';
+import { supabase } from './supabase';
 
 export const useLogout = () => {
   const router = useRouter();
