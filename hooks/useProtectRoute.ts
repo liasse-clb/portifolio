@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import { myAppHook } from '../pages/auth/context/AppUtils';
 
-import { supabase } from '@/pages/lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export default function useProtectedRoute() {
   const router = useRouter();
