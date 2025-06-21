@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { myAppHook } from '../auth/context/AppUtils';
+import { myAppHook } from '../pages/auth/context/AppUtils';
 
 import { supabase } from '@/pages/lib/supabase';
 

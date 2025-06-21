@@ -13,7 +13,7 @@ import {
 } from '../../lib/portifolio';
 import { myAppHook } from '../context/AppUtils';
 
-import useProtectedRoute from '@/pages/hooks/useProtectRoute';
+import useProtectedRoute from '@/hooks/useProtectRoute';
 import { useLogout } from '@/pages/lib/logout';
 import { Navbar } from '@/components/navbar';
 
