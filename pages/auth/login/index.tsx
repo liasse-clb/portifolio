@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 import { myAppHook } from '../context/AppUtils';
 
-import { supabase } from '@/pages/lib/supabase';
+import { supabase } from '@/lib/supabase';
 import { Navbar } from '@/components/navbar';
 
 export default function LoginPage() {
