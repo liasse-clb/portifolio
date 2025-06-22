@@ -11,7 +11,7 @@ import {
   uploadFile,
   updateProject,
 } from '@/lib/portifolio';
-import { myAppHook } from '../context/AppUtils';
+import { myAppHook } from '../../../lib/context/AppUtils';
 
 import useProtectedRoute from '@/hooks/useProtectRoute';
 import { useLogout } from '@/lib/logout';

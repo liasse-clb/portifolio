@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 
-import { myAppHook } from '@/pages/auth/context/AppUtils';
+import { myAppHook } from '@/lib/context/AppUtils';
 
 import { supabase } from './supabase';
 

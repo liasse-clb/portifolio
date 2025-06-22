@@ -14,7 +14,7 @@ import NextLink from 'next/link';
 import clsx from 'clsx';
 
 import { siteConfig } from '@/config/site';
-import { myAppHook } from '@/pages/auth/context/AppUtils';
+import { myAppHook } from '@/lib/context/AppUtils';
 import { ThemeSwitch } from '@/components/theme-switch';
 import {
   TwitterIcon,

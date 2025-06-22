@@ -5,7 +5,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { useRouter } from 'next/router';
 import { Toaster } from 'react-hot-toast';
 
-import { AppUtilsProvider } from '@/pages/auth/context/AppUtils'; // ⬅️ importar seu provider
+import { AppUtilsProvider } from '@/lib/context/AppUtils'; // ⬅️ importar seu provider
 import { fontSans, fontMono } from '@/config/fonts';
 import '@/styles/globals.css';
 
