@@ -1,3 +1,5 @@
+import { FaArchive, FaHome, FaInfo, FaPhone, FaUser } from 'react-icons/fa';
+
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
@@ -29,27 +31,31 @@ export const siteConfig = {
     {
       label: 'Inicio',
       href: '/',
+      icon: FaHome,
     },
     {
       label: 'Contato',
       href: '/contact',
+      icon: FaPhone,
     },
     {
       label: 'Trabalhos',
       href: '/auth/projects',
+      icon: FaArchive,
     },
     {
       label: 'Sobre',
       href: '/about',
+      icon: FaInfo,
     },
     {
       label: 'Admin',
       href: '/auth/login',
+      icon: FaUser,
     },
   ],
   links: {
     github: 'https://github.com/liasse-clb',
-    twitter: 'https://x.com/Liasse16',
     docs: 'https://heroui.com',
     instagram: 'https://www.instagram.com/liasse.lbs/',
     linkedin: 'https://www.linkedin.com/in/calebe-liasse-71488430b/',

@@ -9,10 +9,9 @@ export default function Document() {
       <Head />
       <body
         className={clsx(
-          'h-[450px] bg-background font-sans antialiased bg-cover bg-center bg-no-repeat',
+          'font-sans antialiased',
           fontSans.variable
         )}
-        style={{ backgroundImage: 'url("/banner-clb.jpg")' }}
       >
         <Main />
         <NextScript />

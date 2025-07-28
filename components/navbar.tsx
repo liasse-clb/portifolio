@@ -15,14 +15,13 @@ import clsx from 'clsx';
 
 import { siteConfig } from '@/config/site';
 import { myAppHook } from '@/lib/context/AppUtils';
-import { ThemeSwitch } from '@/components/theme-switch';
 import {
-  TwitterIcon,
   GithubIcon,
   InstagramIcon,
   LinkedInIcon,
   WhatsappIcon,
 } from '@/components/icons';
+import Image from 'next/image';
 
 export const Navbar = () => {
   myAppHook();
@@ -32,7 +31,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <p className="font-caveat text-4xl font-black">CL</p>
+            <Image src={'/favicon.png'} alt={'icone de logo do site'} width={150} height={150} className="max-w-12" />
           </NextLink>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -63,13 +62,9 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.instagram}>
             <InstagramIcon className="text-default-500" />
           </Link>
-          <Link isExternal href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
@@ -77,44 +72,35 @@ export const Navbar = () => {
         <Link isExternal href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
         </Link>
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={item.href}>
-              <Link
-                color={
-                  index === 2
-                    ? 'primary'
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? 'danger'
-                      : 'foreground'
-                }
-                href={item.href}
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+          {siteConfig.navMenuItems.map((item) => {
+            const Icon = item.icon;
 
-          <div className="flex flex-col justify-center gap-4">
-            <Link isExternal color="danger" href={siteConfig.links.whatsapp}>
+            return (
+              <NavbarMenuItem key={item.href}>
+                <Link className="text-gray-600 dark:text-white font-bold flex items-center gap-2" href={item.href}>
+                  {Icon && <Icon className="w-4 h-4" />}
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            );
+          })}
+
+          <div className="flex flex-col justify-center gap-4 font-bold">
+            <Link isExternal className="text-green-500" href={siteConfig.links.whatsapp}>
               <WhatsappIcon className="mr-2" /> Whatsapp
             </Link>
-            <Link isExternal color="danger" href={siteConfig.links.linkedin}>
+            <Link isExternal className="text-blue-500" href={siteConfig.links.linkedin}>
               <LinkedInIcon className="mr-2" /> LinkedIn
             </Link>
-            <Link isExternal color="danger" href={siteConfig.links.instagram}>
+            <Link isExternal className="text-pink-500" href={siteConfig.links.instagram}>
               <InstagramIcon className="mr-2" /> Instagram
             </Link>
-            <Link isExternal color="danger" href={siteConfig.links.twitter}>
-              <TwitterIcon className="mr-2" /> Twitter
-            </Link>
-            <Link isExternal color="danger" href={siteConfig.links.github}>
+            <Link isExternal className="dark:text-neutral-200 text-gray-600" href={siteConfig.links.github}>
               <GithubIcon className="mr-2" /> GitHub
             </Link>
           </div>

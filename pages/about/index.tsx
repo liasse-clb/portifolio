@@ -1,50 +1,39 @@
-import { title } from '@/components/primitives';
 import DefaultLayout from '@/layouts/default';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-6 py-10 px-6 md:px-0">
-        <div className="max-w-2xl bg-white dark:bg-neutral-900 shadow-lg p-6 rounded-lg">
-          <h1 className={title()}>Sobre Mim</h1>
-          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-            Me chamo <strong>Calebe</strong> e atuo como desenvolvedor web e mobile, com experiência
-            em criação de soluções digitais eficientes, acessíveis e com foco em performance. Também
-            trabalho com estratégias de <strong>trade</strong> e sou apaixonado por tecnologia,
-            design e inovação.
+        <div className="max-w-xl bg-white dark:bg-neutral-900 shadow-lg rounded-lg">
+          <div className='w-full'>
+            <Image
+              alt={'Foto da minha pessoa(dono do portifólio)'}
+              className="self-center mb-4 w-full shadow-md rounded-lg"
+              height={150}
+              src={'/Calebe2.webp'}
+              width={150}
+            />
+          </div>
+          <p className=" text-gray-700 dark:text-gray-100 text-center p-4 leading-none">
+            Sou um profissional em desenolvimento, mas estou dando passos largos para a minha liberdade
+            e realização profissional, tendo o objetivo de criar algo que seja realmente útil, afinal não
+            quero criar sistemas, sites e apps que sejam inúteis ou pouco úteis, mas quero que meus projetos e que
+            todo o código que venho construindo sejam úteis e que resolvam problemas reais.
+            Quero a cada dia ter uma apredizado que me edifique e que possa me transformar em alguém responsável e 
+            profissional.
+            Não me preocupo com o que os outros estão fazendo, apenas em ser melhor do que sou agora, apenas quero seguir meu
+            caminho sem ligar se os outros possuem mais do que eu ou se são melhores, apenas quero ser autentico e real. 
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl w-full mt-8">
-          <div className="bg-white dark:bg-neutral-900 shadow-lg p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-2">🛠 Tecnologias</h2>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-              <li>Next.js, React, React Native</li>
-              <li>Node.js, Firebase, Supabase</li>
-              <li>MySQL, PostgreSQL</li>
-              <li>TailwindCSS, HeroUI, Styled Components</li>
-            </ul>
-          </div>
-
-          <div className="bg-white dark:bg-neutral-900 shadow-lg p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-2">🚀 Objetivo</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              Meu objetivo é entregar projetos de alto impacto que gerem valor real para empresas e
-              pessoas. Gosto de unir tecnologia com estratégia para criar experiências digitais que
-              funcionem bem e tenham propósito.
-            </p>
-          </div>
-
-          <div className="bg-white dark:bg-neutral-900 shadow-lg p-6 rounded-lg md:col-span-2">
-            <h2 className="text-xl font-semibold mb-2">📈 Um pouco mais sobre mim</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              Comecei na programação por hobbie e acabou se tornando a minha atividade, hoje eu
-              busco me aprofundar nas tecnologias que estudo, sempre buscando evoluir e aprender com
-              cada projeto. Sou disciplinado, gosto de resolver problemas e estou sempre em busca de
-              melhorar tanto tecnicamente quanto estrategicamente, seja codando, testando novas
-              ideias ou operando no mercado financeiro.
-            </p>
-          </div>
+          <p className=" text-gray-700 dark:text-gray-100 text-center p-4 leading-none">
+            Tenho sonho, propósito e visão, já possuo tudo para fazer dar certo. Comecei na programação front-end apenas
+            como uma brincadeira, comecei a brincar com HTML e CSS, depois me interessei em ir além, pois vi potencial e me identifiquei muito. <br />
+            Hoje, consigo integrar APIs, bancos de dados (Bancos com acesso a servidor ou banco online como Supabase), implemento lógica de programação,
+            mas acima de tudo eu firmei o meu coração nisto, por esses motivos venho me dedicando dia após dia e noite após noite, com o objetivo
+            de melhorar ao longo do tempo.
+            Somente desejo aproveitar o máximo de minha jornada e se der tudo errado irei recomeçar tudo de novo com novo plano ou estratégia, ou até mesmo
+            nova direção, mas de forma alguma desistir 
+          </p>
         </div>
       </section>
     </DefaultLayout>

@@ -24,7 +24,7 @@ export default function ContactPage() {
             alt={'Foto da minha pessoa(dono do portifólio)'}
             className="rounded-full border-white border-medium self-center mb-4 shadow-md"
             height={150}
-            src={'/Calebe.jpeg'}
+            src={'/Calebe.webp'}
             width={150}
           />
           <p className=" text-gray-700 dark:text-gray-100 text-center">
