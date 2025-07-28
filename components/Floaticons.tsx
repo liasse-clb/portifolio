@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
 
 export const FloatIcon = ({ children }: { children: ReactNode }) => (
   <motion.div
@@ -9,7 +9,7 @@ export const FloatIcon = ({ children }: { children: ReactNode }) => (
     transition={{
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       delay: Math.random() * 1.5,
     }}
   >

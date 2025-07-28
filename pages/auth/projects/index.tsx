@@ -2,7 +2,7 @@
 import { button as buttonStyles } from '@heroui/theme';
 import { useEffect, useState } from 'react';
 import { Card, Button, Link } from '@heroui/react';
-import {  FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { getAllProjects } from '@/lib/portifolio';
 import { GithubIcon } from '@/components/icons';
@@ -86,20 +86,22 @@ export default function ProjectsPage() {
                                 <video
                                   key={`${project.id}-video-${index}`}
                                   controls
-                                  className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                    ? 'opacity-100 z-10 pointer-events-auto'
-                                    : 'opacity-0 z-0 pointer-events-none'
-                                    }`}
+                                  className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                    isActive
+                                      ? 'opacity-100 z-10 pointer-events-auto'
+                                      : 'opacity-0 z-0 pointer-events-none'
+                                  }`}
                                   src={item}
                                 />
                               ) : (
                                 <img
                                   key={`${project.id}-img-${index}`}
                                   alt={project.title}
-                                  className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                    ? 'opacity-100 z-10 pointer-events-auto'
-                                    : 'opacity-0 z-0 pointer-events-none'
-                                    }`}
+                                  className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                    isActive
+                                      ? 'opacity-100 z-10 pointer-events-auto'
+                                      : 'opacity-0 z-0 pointer-events-none'
+                                  }`}
                                   src={item}
                                 />
                               );
@@ -151,9 +153,7 @@ export default function ProjectsPage() {
                       )}
                     </div>
                     {project.description && (
-                      <p className="text-md text-centertext-gray-200 mb-4">
-                        {project.description}
-                      </p>
+                      <p className="text-md text-centertext-gray-200 mb-4">{project.description}</p>
                     )}
                     {project.github_link && (
                       <Link

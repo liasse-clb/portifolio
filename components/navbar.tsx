@@ -15,12 +15,7 @@ import clsx from 'clsx';
 
 import { siteConfig } from '@/config/site';
 import { myAppHook } from '@/lib/context/AppUtils';
-import {
-  GithubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  WhatsappIcon,
-} from '@/components/icons';
+import { GithubIcon, InstagramIcon, LinkedInIcon, WhatsappIcon } from '@/components/icons';
 import Image from 'next/image';
 
 export const Navbar = () => {
@@ -31,7 +26,13 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src={'/favicon.png'} alt={'icone de logo do site'} width={150} height={150} className="max-w-12" />
+            <Image
+              src={'/favicon.png'}
+              alt={'icone de logo do site'}
+              width={150}
+              height={150}
+              className="max-w-12"
+            />
           </NextLink>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -82,7 +83,10 @@ export const Navbar = () => {
 
             return (
               <NavbarMenuItem key={item.href}>
-                <Link className="text-gray-600 dark:text-white font-bold flex items-center gap-2" href={item.href}>
+                <Link
+                  className="text-gray-600 dark:text-white font-bold flex items-center gap-2"
+                  href={item.href}
+                >
                   {Icon && <Icon className="w-4 h-4" />}
                   {item.label}
                 </Link>
@@ -100,7 +104,11 @@ export const Navbar = () => {
             <Link isExternal className="text-pink-500" href={siteConfig.links.instagram}>
               <InstagramIcon className="mr-2" /> Instagram
             </Link>
-            <Link isExternal className="dark:text-neutral-200 text-gray-600" href={siteConfig.links.github}>
+            <Link
+              isExternal
+              className="dark:text-neutral-200 text-gray-600"
+              href={siteConfig.links.github}
+            >
               <GithubIcon className="mr-2" /> GitHub
             </Link>
           </div>

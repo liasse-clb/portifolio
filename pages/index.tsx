@@ -36,12 +36,15 @@ export default function IndexPage() {
             src="/Calebe.webp"
             width={150}
           />
-          <p className=" dark:text-gray-100 text-center text-xl font-semibold">Calebe Liasse - Dev Web & Mobile</p>
+          <p className=" dark:text-gray-100 text-center text-xl font-semibold">
+            Calebe Liasse - Dev Web & Mobile
+          </p>
           <br />
           <div>
             <p className="dark:text-gray-200 text-center text-lg leading-5">
               Sou totalmente comprometido com o desenvolvimento de sites e aplicativos profissionais
-              totalmente voltados para resolver os seus problemas. Me chame agora mesmo para uma reunião! 👇
+              totalmente voltados para resolver os seus problemas. Me chame agora mesmo para uma
+              reunião! 👇
             </p>
           </div>
           <div className="flex gap-3 mt-3 flex-wrap justify-center">
@@ -74,26 +77,24 @@ export default function IndexPage() {
             </Link>
           </div>
         </div>
-        <div className='bg-gray-900/70 p-4 rounded-xl mt-10 w-72 md:w-[500px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col items-start'>
-              <Image 
-                alt='Minha imagem' 
-                src={'/Banner.webp'} 
-                width={200} 
-                height={60}
-                className='w-full rounded-md'
-                />
-                <p className="text-md leading-5 dark:text-white">
-                  Tenho o sonho de ser um Dev ativo e cheio de experiência, 
-                  por isso fiz este portifólio para ver o meu progresso ao longo do tempo.
-                  Irei publicar cada vez mais trabalhos aqui e acompanhar toda a minha
-                  caminhada como desenvolvedor.
-                  Este website é o registro da minha carreira e quero usa-lo para demonstrar
-                  o meu valor. 
-                </p>
+        <div className="bg-gray-900/70 p-4 rounded-xl mt-10 w-72 md:w-[500px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col items-start">
+          <Image
+            alt="Minha imagem"
+            src={'/Banner.webp'}
+            width={200}
+            height={60}
+            className="w-full rounded-md"
+          />
+          <p className="text-md leading-5 dark:text-white">
+            Tenho o sonho de ser um Dev ativo e cheio de experiência, por isso fiz este portifólio
+            para ver o meu progresso ao longo do tempo. Irei publicar cada vez mais trabalhos aqui e
+            acompanhar toda a minha caminhada como desenvolvedor. Este website é o registro da minha
+            carreira e quero usa-lo para demonstrar o meu valor.
+          </p>
         </div>
       </section>
-      <section className='flex w-full justify-center mt-20'>
-              <Skills />
+      <section className="flex w-full justify-center mt-20">
+        <Skills />
       </section>
       <div className="mt-16 aling-center text-center">
         <ProjectsPage />
