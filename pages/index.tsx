@@ -16,15 +16,6 @@ import Skills from '@/components/skills';
 export default function IndexPage() {
   const [latestProject, setLatestProject] = useState<any>(null);
 
-  useEffect(() => {
-    async function fetchLatest() {
-      const data = await getLatestProject();
-
-      setLatestProject(data);
-    }
-    fetchLatest();
-  }, []);
-
   return (
     <DefaultLayout>
       <section className="w-full flex-wrap justify-center gap-6 flex flex-row">
