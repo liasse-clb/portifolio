@@ -36,20 +36,6 @@ export default function ProjectsPage() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-8 text-center">Meus Projetos</h1>
-      <div>
-        <div className="fixed top-0 left-0 w-full h-full -z-10">
-          <Particles
-            particleColors={['#ffffff', '#ffffff']}
-            particleCount={10000}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={10}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-          />
-        </div>
-      </div>
       <div
         className="bg-transparent w-80
     shadow-md transition-all duration-300 rounded-lg m-auto"

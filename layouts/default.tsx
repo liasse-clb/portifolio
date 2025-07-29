@@ -15,11 +15,11 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
-          particleCount={10000}
+          particleCount={2000}
           particleSpread={10}
-          speed={0.1}
+          speed={0.07}
           particleBaseSize={50}
-          moveParticlesOnHover={true}
+          moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
         />
