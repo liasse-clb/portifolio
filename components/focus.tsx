@@ -50,7 +50,7 @@ export default function ProblemSolutionSection() {
                         </h3>
                         <ul className="space-y-4">
                             {problemas.map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-tiny md:text-lg leading-tight" text-white">
+                                <li key={i} className="flex items-start gap-3 text-tiny md:text-lg leading-tight text-white">
                                     <FaTimesCircle className="text-red-500 w-5 h-5 mt-1 flex-shrink-0" />
                                     {item}
                                 </li>
