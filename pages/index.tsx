@@ -1,20 +1,17 @@
 'use client';
-import { button as buttonStyles } from '@heroui/theme';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Link } from '@heroui/link';
 
 import ProjectsPage from './auth/projects';
 
-import { FileIcon, WhatsappIcon } from '@/components/icons';
-import { siteConfig } from '@/config/site';
-import { GithubIcon } from '@/components/icons';
+import WhatsappLink, { GitHubLink, DocsLink, LinkedinLink } from '@/components/buttons';
 import DefaultLayout from '@/layouts/default';
-import { getLatestProject } from '@/lib/portifolio';
 import Skills from '@/components/skills';
+import Testimonial from '@/components/testimonial';
+import FocusSession from '@/components/focus';
 
 export default function IndexPage() {
-  const [latestProject, setLatestProject] = useState<any>(null);
 
   return (
     <DefaultLayout>
@@ -33,42 +30,18 @@ export default function IndexPage() {
           <br />
           <div>
             <p className="dark:text-gray-200 text-center text-lg leading-5">
-              Sou totalmente comprometido com o desenvolvimento de sites e aplicativos profissionais
-              totalmente voltados para resolver os seus problemas. Me chame agora mesmo para uma
-              reunião! 👇
+              Desenvolvedor web e mobile focado em transformar ideias em produtos reais. <br />
+              Crio sites e apps personalizados para autônomos e pequenas empresas que querem atrair mais
+              clientes online. Me chame agora mesmo para uma reunião! 👇
             </p>
           </div>
           <div className="flex gap-3 mt-3 flex-wrap justify-center">
-            <Link
-              isExternal
-              className={`${buttonStyles({
-                color: 'success',
-                radius: 'full',
-                variant: 'shadow',
-              })} !text-white text-lg`}
-              href={siteConfig.links.whatsapp}
-            >
-              <WhatsappIcon /> Whatsapp
-            </Link>
-            <Link
-              isExternal
-              className={`${buttonStyles({ variant: 'bordered', radius: 'full' })}
-              href={siteConfig.links.github} text-lg text-white`}
-            >
-              <GithubIcon size={25} />
-              GitHub
-            </Link>
-            <Link
-              isExternal
-              className={`${buttonStyles({ color: 'primary', variant: 'shadow', radius: 'full' })} text-white text-center`}
-              href="/auth/projects"
-            >
-              <FileIcon />
-              Veja Meus Projetos
-            </Link>
+            <WhatsappLink />
+            <GitHubLink />
+            <DocsLink />
           </div>
         </div>
-        <div className="bg-gray-900/70 p-4 rounded-xl mt-10 w-72 md:w-[500px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col items-start">
+        <div className="bg-gray-900/70 p-4 text-center rounded-xl mt-10 w-72 md:w-[500px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col">
           <Image
             alt="Minha imagem"
             src={'/Banner.webp'}
@@ -76,13 +49,25 @@ export default function IndexPage() {
             height={60}
             className="w-full rounded-md"
           />
-          <p className="text-md leading-5 dark:text-white">
-            Tenho o sonho de ser um Dev ativo e cheio de experiência, por isso fiz este portifólio
-            para ver o meu progresso ao longo do tempo. Irei publicar cada vez mais trabalhos aqui e
-            acompanhar toda a minha caminhada como desenvolvedor. Este website é o registro da minha
-            carreira e quero usa-lo para demonstrar o meu valor.
+          <p className="font-extrabold text-white text-center text-2xl">O que eu faço?</p>
+          <p className="text-md leading-5 text-white">
+            Desenvolvimento web e mobile com foco em conversão, design e performance.
+            Eu me empenho para entregar projetos bonitos e úteis, mas principalmente em
+            trazer resultado real e uma solução para o seu problema ou sua dor.
+            Eu crio e integro sistemas, trabalho com bancos de dados, experiência de 
+            usuário, estou preparado para atender você e os seus clientes.<br />
+            Entre em contato comigo pelo <span className='text-blue-500 font-bold'>Linkedin</span> ou <span className='font-bold text-green-400'>Whatsapp</span>
           </p>
+          <div className='flex gap-3 mt-2 flex-wrap justify-center'>
+            <WhatsappLink />
+            <LinkedinLink />
+          </div>
+
         </div>
+      </section>
+      <section className='w-full bg-transparent flex flex-col justify-center mt-4 md:mt-56'>
+        <Testimonial />
+        <FocusSession />
       </section>
       <section className="flex w-full justify-center mt-20">
         <Skills />

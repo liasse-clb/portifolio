@@ -16,9 +16,9 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={2000}
-          particleSpread={10}
+          particleSpread={5}
           speed={0.07}
-          particleBaseSize={50}
+          particleBaseSize={20}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}

@@ -26,7 +26,7 @@ import { FloatIcon } from './Floaticons';
 export default function Skills() {
   return (
     <div className="flex flex-col md:flex-row justify-center items-start gap-10 max-w-ful">
-      <div className="flex flex-row flex-wrap justify-center gap-6 max-w-[600px] text-center text-white">
+      <div className="flex flex-row flex-wrap justify-center gap-6 max-w-[560px] text-center text-white">
         <p className="md:text-4xl text-2xl font-bold w-full">Hard Skills</p>
         <FloatIcon>
           <div className="w-20 md:w-32">
@@ -86,7 +86,7 @@ export default function Skills() {
         </FloatIcon>
       </div>
 
-      <div className="flex flex-row flex-wrap justify-center gap-6 max-w-[600px] text-center text-white">
+      <div className="flex flex-row flex-wrap justify-center gap-6 max-w-[560px] text-center text-white">
         <p className="md:text-4xl text-2xl font-bold w-full">Soft Skills</p>
         <FloatIcon>
           <div className="w-20 md:w-32">

@@ -6,7 +6,6 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { getAllProjects } from '@/lib/portifolio';
 import { GithubIcon } from '@/components/icons';
-import Particles from '@/components/Particles';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -34,7 +33,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className='m-2'>
+    <div className="m-2">
       <h1 className="text-3xl font-bold mb-8 text-center">Meus Projetos</h1>
       <div
         className="bg-transparent w-full
@@ -45,7 +44,7 @@ export default function ProjectsPage() {
         ) : projects.length === 0 ? (
           <p className="text-center">Nenhum projeto disponível.</p>
         ) : (
-          <div className='flex justify-center'>
+          <div className="flex justify-center">
             <ul className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center">
               {projects.map((project) => {
                 const mediaItems = [
@@ -62,7 +61,7 @@ export default function ProjectsPage() {
                       radius="lg"
                     >
                       {/* FORÇANDO PROPORÇÃO RESPONSIVA */}
-                      <div className="relative w-full aspect-[16/9]">
+                      <div className="relative w-full h-auto aspect-[16/9]">
                         {mediaItems.length > 0 ? (
                           <>
                             <div className="relative w-full h-full">
@@ -74,20 +73,22 @@ export default function ProjectsPage() {
                                   <video
                                     key={`${project.id}-video-${index}`}
                                     controls
-                                    className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                      ? 'opacity-100 z-10 pointer-events-auto'
-                                      : 'opacity-0 z-0 pointer-events-none'
-                                      }`}
+                                    className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                      isActive
+                                        ? 'opacity-100 z-10 pointer-events-auto'
+                                        : 'opacity-0 z-0 pointer-events-none'
+                                    }`}
                                     src={item}
                                   />
                                 ) : (
                                   <img
                                     key={`${project.id}-img-${index}`}
                                     alt={project.title}
-                                    className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${isActive
-                                      ? 'opacity-100 z-10 pointer-events-auto'
-                                      : 'opacity-0 z-0 pointer-events-none'
-                                      }`}
+                                    className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 rounded-lg ${
+                                      isActive
+                                        ? 'opacity-100 z-10 pointer-events-auto'
+                                        : 'opacity-0 z-0 pointer-events-none'
+                                    }`}
                                     src={item}
                                   />
                                 );
@@ -138,17 +139,15 @@ export default function ProjectsPage() {
                         </Button>
                       )}
                       {project.description && (
-                        <p className="text-md text-gray-200 my-3">
-                          {project.description}
-                        </p>
+                        <p className="text-md text-gray-200 my-3">{project.description}</p>
                       )}
                       {project.github_link && (
                         <Link
                           isExternal
-                          className={buttonStyles({
-                            variant: 'bordered',
+                          className={`${buttonStyles({
+                            variant: 'shadow',
                             radius: 'full',
-                          })}
+                          })} text-black bg-white`}
                           href={project.github_link}
                           rel="noopener noreferrer"
                           target="_blank"
