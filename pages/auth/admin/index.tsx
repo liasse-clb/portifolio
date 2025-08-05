@@ -156,7 +156,7 @@ export default function AdminPage() {
     <div>
       <Navbar />
       <div className="p-6 max-w-2xl mx-auto">
-        <div className="bg-white dark:bg-gray-900 p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
+        <div className="bg-white dark:bg-gray-900/15 backdrop-blur-[3px] p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
           <Image
             alt="minha foto"
             className="rounded-full border-white border-medium mb-4 shadow-md"
@@ -174,7 +174,7 @@ export default function AdminPage() {
           </button>
         </div>
 
-        <div className="mt-10 p-4 bg-gray-100 dark:bg-gray-800 rounded">
+        <div className="mt-10 p-4 bg-gray-100 dark:bg-gray-900/15 backdrop-blur-[3px] rounded">
           <h2 className="text-xl font-semibold mb-4">Criar Novo Projeto</h2>
           <input
             className="w-full mb-2 p-2 rounded"
@@ -248,7 +248,7 @@ export default function AdminPage() {
             {projects.map((project: any) => (
               <li
                 key={project.id}
-                className="p-4 bg-white dark:bg-gray-800 rounded shadow flex flex-col"
+                className="p-4 bg-white dark:bg-gray-900/15 backdrop-blur-[3px] rounded shadow flex flex-col"
               >
                 {editingProjectId === project.id ? (
                   <div>

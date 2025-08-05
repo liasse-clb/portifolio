@@ -84,3 +84,15 @@ export function InContact() {
         </Link>
     )
 }
+
+export function WorkIng() {
+    return (
+        <Link
+            isExternal
+            className={`${buttonStyles({ color: 'success', variant: 'shadow', radius: 'full' })} text-white text-center m-auto mt-6 text-lg p-6`}
+            href={siteConfig.links.whatsapp}
+        >
+            Vamos Trabalhar!
+        </Link>
+    )
+}

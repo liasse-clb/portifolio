@@ -31,20 +31,20 @@ export default function ProblemSolutionSection() {
 
     return (
         <section className="py-12 px-4 bg-transparent">
-            <div className="max-w-6xl mx-auto text-white">
-                <TrueFocus
-                    sentence="Foco Em Solução"
+            <div className="max-w-6xl mx-auto leading-none text-wrap text-white">
+                <div className="text-[2rem]">
+                    <TrueFocus
+                    sentence="Foco Na Solução"
                     manualMode={false}
                     blurAmount={5}
                     borderColor="red"
                     animationDuration={1}
                     pauseBetweenAnimations={0.5}
-
                 />
-
+                </div>   
                 <div className="flex flex-col md:flex-row gap-8 mt-8">
                     {/* Problemas */}
-                    <div className="flex-1 bg-gray-900/70 shadow-md rounded-lg p-6" data-aos="fade-right">
+                    <div className="flex-1 bg-gray-900/15 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-right">
                         <h3 className="text-xl font-semibold text-red-500 mb-4 flex items-center gap-2">
                             <FaTimesCircle /> Problemas mais comuns
                         </h3>
@@ -59,7 +59,7 @@ export default function ProblemSolutionSection() {
                     </div>
 
                     {/* Soluções */}
-                    <div className="flex-1 bg-gray-900/70 shadow-md rounded-lg p-6" data-aos="fade-left">
+                    <div className="flex-1 bg-gray-900/15 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-left">
                         <h3 className="text-xl font-semibold text-green-600 mb-4 flex items-center gap-2">
                             <FaCheckCircle /> Minhas soluções
                         </h3>

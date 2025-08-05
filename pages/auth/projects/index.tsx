@@ -57,10 +57,9 @@ export default function ProjectsPage() {
                   <li key={project.id} className="flex flex-col items-center">
                     <Card
                       isFooterBlurred
-                      className="border-none w-full max-w-[420px] h-full relative overflow-hidden"
+                      className="border-none w-full max-w-[420px] relative overflow-hidden"
                       radius="lg"
                     >
-                      {/* FORÇANDO PROPORÇÃO RESPONSIVA */}
                       <div className="relative w-full h-auto aspect-[16/9]">
                         {mediaItems.length > 0 ? (
                           <>
