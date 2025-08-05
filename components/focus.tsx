@@ -34,7 +34,7 @@ export default function ProblemSolutionSection() {
             <div className="max-w-6xl mx-auto leading-none text-wrap text-white">
                 <div className="text-[2rem]">
                     <TrueFocus
-                    sentence="Foco Na Solução"
+                    sentence="FOCO NA SOLUÇÃO"
                     manualMode={false}
                     blurAmount={5}
                     borderColor="red"

@@ -22,10 +22,10 @@ export const siteConfig = {
       label: 'Sobre',
       href: '/about',
     },
-    {
+  /*{
       label: 'Admin',
       href: '/auth/login',
-    },
+    },*/
   ],
   navMenuItems: [
     {
@@ -48,11 +48,11 @@ export const siteConfig = {
       href: '/about',
       icon: FaInfo,
     },
-    {
+    /*{
       label: 'Admin',
       href: '/auth/login',
       icon: FaUser,
-    },
+    },*/
   ],
   links: {
     github: 'https://github.com/liasse-clb',
