@@ -30,8 +30,8 @@ export default function ProblemSolutionSection() {
 
 
     return (
-        <section className="py-12 px-4 bg-transparent">
-            <div className="max-w-6xl mx-auto leading-none text-wrap text-white">
+        <section className="py-12 p-3 flex flex-wrap justify-center bg-transparent">
+            <div className="max-w-6xl leading-none text-wrap text-white">
                 <div className="text-[2rem]">
                     <TrueFocus
                     sentence="FOCO NA SOLUÇÃO"
@@ -44,14 +44,14 @@ export default function ProblemSolutionSection() {
                 </div>   
                 <div className="flex flex-col md:flex-row gap-8 mt-8">
                     {/* Problemas */}
-                    <div className="flex-1 bg-gray-900/15 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-right">
+                    <div className="flex-1 bg-gray-900/35 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-right">
                         <h3 className="text-xl font-semibold text-red-500 mb-4 flex items-center gap-2">
                             <FaTimesCircle /> Problemas mais comuns
                         </h3>
                         <ul className="space-y-4">
                             {problemas.map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-tiny md:text-lg leading-tight text-white">
-                                    <FaTimesCircle className="text-red-500 w-5 h-5 mt-1 flex-shrink-0" />
+                                    <FaTimesCircle className="text-red-500 w-4 h-4 flex-shrink-0" />
                                     {item}
                                 </li>
                             ))}
@@ -59,24 +59,20 @@ export default function ProblemSolutionSection() {
                     </div>
 
                     {/* Soluções */}
-                    <div className="flex-1 bg-gray-900/15 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-left">
+                    <div className="flex-1 bg-gray-900/35 backdrop-blur-[3px] shadow-md rounded-lg p-6" data-aos="fade-left">
                         <h3 className="text-xl font-semibold text-green-600 mb-4 flex items-center gap-2">
                             <FaCheckCircle /> Minhas soluções
                         </h3>
                         <ul className="space-y-4">
                             {solucoes.map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-tiny md:text-lg leading-tight text-white">
-                                    <FaCheckCircle className="text-green-600 mt-1 w-5 h-5 flex-shrink-0" />
+                                    <FaCheckCircle className="text-green-600 w-4 h-4 flex-shrink-0" />
                                     {item}
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div className="flex flex-col justify-center mt-6 m-auto">
-                <p className="text-base md:text-2xl font-light text-white leading-tight text-center">Precisa agora de uma solução que resolva a parada ? <br />Entre em contato comigo!</p>
-                <InContact />
             </div>
         </section>
     );

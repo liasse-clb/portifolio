@@ -57,8 +57,8 @@ export default function ProjectsPage() {
                   <li key={project.id} className="flex flex-col items-center">
                     <Card
                       isFooterBlurred
-                      className="border-none w-full max-w-[420px] relative overflow-hidden"
-                      radius="lg"
+                      className="border-none w-full max-w-[420px] rounded-t-lg relative overflow-hidden"
+                      radius="none"
                     >
                       <div className="relative w-full h-auto aspect-[16/9]">
                         {mediaItems.length > 0 ? (

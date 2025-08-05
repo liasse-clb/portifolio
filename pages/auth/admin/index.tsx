@@ -156,7 +156,7 @@ export default function AdminPage() {
     <div>
       <Navbar />
       <div className="p-6 max-w-2xl mx-auto">
-        <div className="bg-white dark:bg-gray-900/15 backdrop-blur-[3px] p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
+        <div className="bg-white dark:bg-gray-900/35 backdrop-blur-[3px] p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
           <Image
             alt="minha foto"
             className="rounded-full border-white border-medium mb-4 shadow-md"

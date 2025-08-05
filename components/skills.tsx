@@ -116,7 +116,7 @@ export default function Skills() {
         </FloatIcon>
         <FloatIcon>
           <div className="w-20 md:w-32">
-            <FaAward className="w-full h-auto text-yellow-600" />
+            <FaAward className="w-full h-auto text-yellow-500" />
             <p className="font-bold md:text-lg text-tiny mt-1 text-white leading-none">
               Proatividade
             </p>
