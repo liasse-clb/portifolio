@@ -15,7 +15,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
-          particleCount={900}
+          particleCount={600}
           particleSpread={3}
           speed={0.07}
           particleBaseSize={30}

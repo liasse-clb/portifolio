@@ -26,7 +26,7 @@ export default function AboutMeSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Prazer, eu sou o Calebe</h2>
 
         <p className="text-sm md:text-lg text-white leading-5">
-          Comecei aqui por hobbie, mas o que começõu como brincadeira hoje é a minha oportunidade de mudar de vida. Não só a minha, mas a de quem me confia um projeto.
+          Comecei aqui por hobbie, mas o que começou como brincadeira hoje é a minha oportunidade de mudar de vida. Não só a minha, mas a de quem me confia um projeto.
           Vi no código uma forma de criar coisas que resolvem, que transformam e que conectam pessoas com seus objetivos.
         </p>
 
