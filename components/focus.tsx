@@ -30,7 +30,7 @@ export default function ProblemSolutionSection() {
 
 
     return (
-        <section className="py-12 p-3 flex flex-wrap justify-center bg-transparent">
+        <section className="py-6 p-3 flex flex-wrap justify-center bg-transparent">
             <div className="max-w-6xl leading-none text-wrap text-white">
                 <div className="text-[2rem]">
                     <TrueFocus
