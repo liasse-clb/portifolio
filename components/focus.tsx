@@ -22,9 +22,9 @@ export default function ProblemSolutionSection() {
     ];
 
     return (
-        <section className="py-8 px-4 bg-transparent">
+        <section className="py-6 px-4 bg-transparent">
             <div className="text-white">
-                <div>
+                <div className="mb-6">
                    <TrueFocus
                         sentence="FOCO NA SOLUÇÃO"
                         manualMode={false}
