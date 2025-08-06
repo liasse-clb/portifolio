@@ -156,7 +156,7 @@ export default function AdminPage() {
     <div>
       <Navbar />
       <div className="p-6 max-w-2xl mx-auto">
-        <div className="bg-white dark:bg-gray-900/35 backdrop-blur-[3px] p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
+        <div className="bg-gray-900/35 backdrop-blur-[1px] p-4 rounded-xl mt-10 shadow-md flex flex-col items-center">
           <Image
             alt="minha foto"
             className="rounded-full border-white border-medium mb-4 shadow-md"
@@ -174,7 +174,7 @@ export default function AdminPage() {
           </button>
         </div>
 
-        <div className="mt-10 p-4 bg-gray-100 dark:bg-gray-900/15 backdrop-blur-[3px] rounded">
+        <div className="mt-10 p-4 bg-gray-900/15 backdrop-blur-[1px] rounded">
           <h2 className="text-xl font-semibold mb-4">Criar Novo Projeto</h2>
           <input
             className="w-full mb-2 p-2 rounded"
@@ -248,7 +248,7 @@ export default function AdminPage() {
             {projects.map((project: any) => (
               <li
                 key={project.id}
-                className="p-4 bg-white dark:bg-gray-900/15 backdrop-blur-[3px] rounded shadow flex flex-col"
+                className="p-4 bg-gray-900/15 backdrop-blur-[1px] rounded shadow flex flex-col"
               >
                 {editingProjectId === project.id ? (
                   <div>
@@ -298,7 +298,7 @@ export default function AdminPage() {
                     )}
                     {project.github_link && (
                       <a
-                        className="text-sm text-gray-600 dark:text-gray-300 underline"
+                        className="text-sm text-gray-600 text-gray-300 underline"
                         href={project.github_link}
                         rel="noopener noreferrer"
                         target="_blank"

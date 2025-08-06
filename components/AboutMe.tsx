@@ -12,7 +12,7 @@ export default function AboutMeSection() {
   return (
     <section className="py-4 m-3 text-white">
       <div
-        className="max-w-2xl bg-gray-900/30 backdrop-blur-[3px] shadow-lg rounded-xl p-6 text-center"
+        className="max-w-2xl bg-gray-900/70 backdrop-blur-[1px] shadow-lg rounded-xl p-6 text-center"
         data-aos="fade-up"
       >
         <Image

@@ -51,7 +51,7 @@ export default function HowToWork() {
           {etapas.map((etapa, index) => (
             <div
               key={index}
-              className="bg-gray-900/20 backdrop-blur-[3px] p-6 rounded-lg shadow-md text-center"
+              className="bg-gray-900/60 backdrop-blur-[1px] p-6 rounded-lg shadow-md text-center"
               data-aos="fade-up"
               data-aos-delay={300 * index}
             >

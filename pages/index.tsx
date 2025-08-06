@@ -16,7 +16,7 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className="w-full flex-wrap justify-center gap-6 flex flex-row">
-        <div className="bg-gray-900/35 backdrop-blur-[3px] p-6 rounded-xl mt-10 max-w-[600px] w-[700px] m-2 shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col">
+        <div className="bg-gray-900/70 backdrop-blur-[1px] p-6 rounded-xl mt-10 max-w-[600px] w-[700px] m-4 shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col">
           <Image
             alt="Foto da minha pessoa(dono do portifólio)"
             className="rounded-full border-white border-medium w-4/5 md:w-2/4 self-center mb-4 shadow-md"
@@ -41,7 +41,7 @@ export default function IndexPage() {
             <DocsLink />
           </div>
         </div>
-        <div className="bg-gray-900/35 backdrop-blur-[3px] p-4 text-center m-2 rounded-xl mt-10 max-w-[600px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col">
+        <div className="bg-gray-900/70 backdrop-blur-[1px] p-4 text-center m-4 rounded-xl mt-10 max-w-[600px] shadow-md md:shadow-lg lg:shadow-xl transition-all duration-300 flex flex-col">
           <Image
             alt="Minha imagem"
             src={'/Banner.webp'}
@@ -68,9 +68,9 @@ export default function IndexPage() {
       <section className='w-full flex flex-col justify-center mt-4 md:mt-32 lg:mt-56'>
         <Testimonial />
       </section>
-      {/*<section className="mt-10 flex w-full justify-center">
+      <section className="mt-10 flex w-full justify-center">
         <FocusSession />
-      </section>*/}
+      </section>
       <section>
         <div className="flex flex-col justify-center mt-6 p-4">
           <p className="text-base md:text-2xl font-light text-white leading-tight text-center">Precisa agora de uma solução que resolva a parada ? <br />Entre em contato comigo!</p>

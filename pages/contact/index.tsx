@@ -12,7 +12,7 @@ export default function ContactPage() {
       <section className="flex flex-col items-center justify-center gap-4">
         <div
           className="
-  bg-white dark:bg-gray-900/35 backdrop-blur-[3px] p-4 rounded-xl mt-10 
+   dark:bg-gray-900/60 backdrop-blur-[1px] p-4 rounded-xl mt-10 
     w-72 sm:w-80
     shadow-md md:shadow-lg lg:shadow-xl 
     transition-all duration-300 
