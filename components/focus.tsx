@@ -29,22 +29,22 @@ export default function ProblemSolutionSection() {
     ];
 
     return (
-        <section className="py-12 px-4 bg-transparent">
-            <div className="max-w-6xl mx-auto text-white leading-relaxed">
-                <div className="mb-8">
-                    <TrueFocus
+        <section className="py-8 px-4 bg-transparent">
+            <div className="text-white leading-relaxed">
+                <div>
+                   {/* <TrueFocus
                         sentence="FOCO NA SOLUÇÃO"
                         manualMode={false}
                         blurAmount={5}
                         borderColor="red"
                         animationDuration={1}
                         pauseBetweenAnimations={0.5}
-                    />
+                    />{*/}
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Problemas */}
-                    <div className="flex-1 bg-gray-900/40 backdrop-blur-sm shadow-md rounded-lg p-6" data-aos="fade-right">
+                    <div className="flex-1 bg-gray-900/50 backdrop-blur-[2px]rounded-lg p-6" data-aos="fade-right">
                         <h3 className="text-xl font-semibold text-red-500 mb-4 flex items-center gap-2">
                             <FaTimesCircle /> Problemas mais comuns
                         </h3>
@@ -59,7 +59,7 @@ export default function ProblemSolutionSection() {
                     </div>
 
                     {/* Soluções */}
-                    <div className="flex-1 bg-gray-900/40 backdrop-blur-sm shadow-md rounded-lg p-6" data-aos="fade-left">
+                    <div className="flex-1 bg-gray-900/50 backdrop-blur-[2px] rounded-lg p-6" data-aos="fade-left">
                         <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center gap-2">
                             <FaCheckCircle /> Minhas soluções
                         </h3>
