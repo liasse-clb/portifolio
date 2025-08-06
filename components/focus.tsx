@@ -1,14 +1,7 @@
 import { FaTimesCircle, FaCheckCircle } from "react-icons/fa";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 import TrueFocus from "@/components/Truefocus";
-import { InContact } from "./buttons";
 
 export default function ProblemSolutionSection() {
-    useEffect(() => {
-        AOS.init({ duration: 600, once: true });
-    }, []);
 
     const problemas = [
         "Acredita que um site profissional aumentaria suas vendas e transmitiria profissionalismo?",
@@ -30,21 +23,20 @@ export default function ProblemSolutionSection() {
 
     return (
         <section className="py-8 px-4 bg-transparent">
-            <div className="text-white leading-relaxed">
+            <div className="text-white">
                 <div>
-                   {/* <TrueFocus
+                   <TrueFocus
                         sentence="FOCO NA SOLUÇÃO"
                         manualMode={false}
                         blurAmount={5}
                         borderColor="red"
                         animationDuration={1}
                         pauseBetweenAnimations={0.5}
-                    />{*/}
+                    />
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-8">
-                    {/* Problemas */}
-                    <div className="flex-1 bg-gray-900/50 backdrop-blur-[2px]rounded-lg p-6" data-aos="fade-right">
+                <div className="flex flex-col md:flex-row justify-center gap-8">
+                    <div className="w-full md:w-1/2 lg:w-1/3 bg-gray-900/50 backdrop-blur-[2px]rounded-lg p-6">
                         <h3 className="text-xl font-semibold text-red-500 mb-4 flex items-center gap-2">
                             <FaTimesCircle /> Problemas mais comuns
                         </h3>
@@ -57,9 +49,7 @@ export default function ProblemSolutionSection() {
                             ))}
                         </ul>
                     </div>
-
-                    {/* Soluções */}
-                    <div className="flex-1 bg-gray-900/50 backdrop-blur-[2px] rounded-lg p-6" data-aos="fade-left">
+                    <div className="w-full md:w-1/2 lg:w-1/3 bg-gray-900/50 backdrop-blur-[2px] rounded-lg p-6">
                         <h3 className="text-xl font-semibold text-green-500 mb-4 flex items-center gap-2">
                             <FaCheckCircle /> Minhas soluções
                         </h3>
