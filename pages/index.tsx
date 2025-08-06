@@ -68,9 +68,9 @@ export default function IndexPage() {
       <section className='w-full flex flex-col justify-center mt-4 md:mt-32 lg:mt-56'>
         <Testimonial />
       </section>
-      <section className="mt-10 flex w-full justify-center">
+      {/*<section className="mt-10 flex w-full justify-center">
         <FocusSession />
-      </section>
+      </section>*/}
       <section>
         <div className="flex flex-col justify-center mt-6 p-4">
           <p className="text-base md:text-2xl font-light text-white leading-tight text-center">Precisa agora de uma solução que resolva a parada ? <br />Entre em contato comigo!</p>
