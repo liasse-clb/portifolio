@@ -4,7 +4,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: 'Portifólio',
-  description: 'Meu portifólio pessoal para exibir meus trabalhos e projetos',
+  description: 'Criação de sites e aplicativos web responsivos com foco em experiência do usuário. Veja meus projetos de desenvolvimento web e mobile, otimização de SEO da sua página, criação de páginas de alta conversão e desenvolvimento de aplicações web e mobile para empresas e auutonômos',
   navItems: [
     {
       label: 'Inicio',
