@@ -3,7 +3,7 @@ import { FaArchive, FaHome, FaInfo, FaPhone, FaUser } from 'react-icons/fa';
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: 'Portifólio',
+  name: 'Calebe Liasse | Portifólio',
   description: 'Criação de sites e aplicativos web responsivos com foco em experiência do usuário. Veja meus projetos de desenvolvimento web e mobile, otimização de SEO da sua página, criação de páginas de alta conversão e desenvolvimento de aplicações web e mobile para empresas e auutonômos',
   navItems: [
     {
