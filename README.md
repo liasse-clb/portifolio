@@ -6,7 +6,7 @@ Este é meu portfólio pessoal desenvolvido com **Next.js** e **Supabase**, onde
 
 O objetivo deste projeto é servir como uma vitrine dos meus trabalhos, com uma interface moderna, responsiva, acessível e com recursos de administração para facilitar a gestão dos projetos apresentados.
 
-Você pode visualizar o portfólio em produção aqui: **[https://portifolio-calebe-liasse.vercel.app/]([https://seu-dominio.vercel.app](https://portifolio-calebe-liasse.vercel.app/))**
+Você pode visualizar o portfólio em produção aqui: <a href="https://portifolio-calebe-liasse.vercel.app/">Clique aqui</a>
 
 ---
 
